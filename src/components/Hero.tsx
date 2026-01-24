@@ -5,16 +5,21 @@ import configDetail from "config";
 // import heroImage from "@/assets/hero-image.jpg";
 
 const Hero = () => {
-  const whatsappNumber = configDetail.whatsappNumber; 
   const phoneNumber = configDetail.phoneNumber; 
+  const phoneNumber2 = configDetail.phoneNumber_2;
+  const phoneNumber3 = configDetail.phoneNumber_3;
   
   const handleWhatsApp = () => {
-    const message = encodeURIComponent("Hello! I'm interested in your properties in Asaba. Please share more information.");
-    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
+    const phoneNumbers = [phoneNumber, phoneNumber2, phoneNumber3].filter(Boolean);
+    const selectedPhone = phoneNumbers[Math.floor(Math.random() * phoneNumbers.length)];
+    const message = encodeURIComponent("Hello! I'd like to inquire about your properties in Asaba.");
+    window.open(`https://wa.me/${selectedPhone}?text=${message}`, "_blank");
   };
 
   const handleCall = () => {
-    window.location.href = `tel:${phoneNumber.replace(/\s/g, "")}`;
+    const phoneNumbers = [phoneNumber, phoneNumber2, phoneNumber3].filter(Boolean);
+    const selectedPhone = phoneNumbers[Math.floor(Math.random() * phoneNumbers.length)];
+    window.location.href = `tel:${selectedPhone.replace(/\s/g, "")}`;
   };
 
   return (
@@ -90,7 +95,7 @@ const Hero = () => {
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-              <span>Trusted</span>
+              <span>Trusted since 2010</span>
             </div>
           </div>
         </div>

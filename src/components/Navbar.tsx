@@ -10,6 +10,8 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false); 
 
   const phoneNumber = configDetail.phoneNumber; 
+  const phoneNumber2 = configDetail.phoneNumber_2;
+  const phoneNumber3 = configDetail.phoneNumber_3;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,7 +30,9 @@ const Navbar = () => {
   ];
 
   const handleCall = () => {
-    window.location.href = phoneNumber;
+    const phoneNumbers = [phoneNumber, phoneNumber2, phoneNumber3].filter(Boolean);
+    const selectedPhone = phoneNumbers[Math.floor(Math.random() * phoneNumbers.length)];
+    window.location.href = selectedPhone;
   };
 
   return (

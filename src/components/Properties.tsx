@@ -62,13 +62,18 @@ const properties = [
 ];
 
 const Properties = () => {
-const whatsappNumber = configDetail.whatsappNumber; 
+  const phoneNumber = configDetail.phoneNumber; 
+  const phoneNumber2 = configDetail.phoneNumber_2;
+  const phoneNumber3 = configDetail.phoneNumber_3;
 
   const handleInquiry = (propertyTitle: string) => {
+    const phoneNumbers = [phoneNumber, phoneNumber2, phoneNumber3].filter(Boolean);
+    const selectedPhone = phoneNumbers[Math.floor(Math.random() * phoneNumbers.length)];
+
     const message = encodeURIComponent(
       `Hello! I'm interested in: ${propertyTitle}. Please share more details including price and availability.`
     );
-    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
+    window.open(`https://wa.me/${selectedPhone}?text=${message}`, "_blank");
   };
 
   return (
@@ -168,7 +173,11 @@ const whatsappNumber = configDetail.whatsappNumber;
                   const message = encodeURIComponent(
                     "Hello! I'm looking for a specific type of property in Asaba. Can you help?"
                   );
-                  window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
+
+                  const phoneNumbers = [phoneNumber, phoneNumber2, phoneNumber3].filter(Boolean);
+                  const selectedPhone = phoneNumbers[Math.floor(Math.random() * phoneNumbers.length)];
+
+                  window.open(`https://wa.me/${selectedPhone}?text=${message}`, "_blank");
                 }}
               >
                 Contact for More Options

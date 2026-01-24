@@ -5,7 +5,8 @@ import configDetail from "config";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const whatsappNumber = configDetail.whatsappNumber;  
+
+  const phoneNumber = configDetail.phoneNumber; 
 
   return (
     <AnimatedSection animation="fade">
@@ -91,11 +92,11 @@ const Footer = () => {
                 </li>
                 <li className="flex items-center gap-3 text-cream/70">
                   <Phone className="w-5 h-5 text-gold flex-shrink-0" />
-                  <span>+2347076967248</span>
+                  <span>{phoneNumber}</span>
                 </li>
                 <li>
                   <a
-                    href={`https://wa.me/${whatsappNumber}`}
+                    href={`https://wa.me/${phoneNumber}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 text-cream/70 hover:text-gold transition-colors"

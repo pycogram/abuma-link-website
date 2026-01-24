@@ -1,4 +1,4 @@
-import { Building2, Shield, Users, Building } from 'lucide-react';
+import { Building2, Shield, Users } from 'lucide-react';
 import AnimatedSection from "./AnimatedSection";
 
 const About = () => {

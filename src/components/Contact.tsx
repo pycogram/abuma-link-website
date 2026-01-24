@@ -4,19 +4,26 @@ import AnimatedSection from "./AnimatedSection";
 import configDetail from "config";
 
 const Contact = () => {
-  const whatsappNumber = configDetail.whatsappNumber; 
+  // const whatsappNumber = configDetail.whatsappNumber; 
   const phoneNumber = configDetail.phoneNumber; 
+  const phoneNumber2 = configDetail.phoneNumber_2;
+  const phoneNumber3 = configDetail.phoneNumber_3;
+
   const email = configDetail.socialLinks.email; 
   
   const handleWhatsApp = () => {
+    const phoneNumbers = [phoneNumber, phoneNumber2, phoneNumber3].filter(Boolean);
+    const selectedPhone = phoneNumbers[Math.floor(Math.random() * phoneNumbers.length)];
     const message = encodeURIComponent("Hello! I'd like to inquire about your properties in Asaba.");
-    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
+    window.open(`https://wa.me/${selectedPhone}?text=${message}`, "_blank");
   };
 
   const handleCall = () => {
-    window.location.href = `tel:${phoneNumber.replace(/\s/g, "")}`;
+    const phoneNumbers = [phoneNumber, phoneNumber2, phoneNumber3].filter(Boolean);
+    const selectedPhone = phoneNumbers[Math.floor(Math.random() * phoneNumbers.length)];
+    window.location.href = `tel:${selectedPhone.replace(/\s/g, "")}`;
   };
-
+  
   return (
     <AnimatedSection animation="fade-up">
       <div id="contact" className="py-20 lg:py-32 bg-secondary/30">
@@ -45,10 +52,12 @@ const Contact = () => {
                     <MapPin className="w-6 h-6 text-charcoal" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-foreground mb-1">Our Location</h3>
+                    <h3 className="text-lg font-semibold text-foreground mb-1">Office Address</h3>
                     <p className="text-muted-foreground">
-                      Asaba, Delta State<br />
-                      Nigeria
+                      No. 21, Alanza Street,<br />
+                      Opposite Junior Staff Quarters,<br /> 
+                      Off Okpanam Road,<br />
+                      Asaba, Delta State, Nigeria.
                     </p>
                   </div>
                 </div>
@@ -58,8 +67,10 @@ const Contact = () => {
                     <Phone className="w-6 h-6 text-charcoal" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-foreground mb-1">Phone</h3>
+                    <h3 className="text-lg font-semibold text-foreground mb-1">Mobile Numbers</h3>
                     <p className="text-muted-foreground">{phoneNumber}</p>
+                    <p className="text-muted-foreground">{phoneNumber2}</p>
+                    <p className="text-muted-foreground">{phoneNumber3}</p>
                   </div>
                 </div>
 

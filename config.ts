@@ -1,6 +1,9 @@
 
 const configDetail = {
   phoneNumber: '+2347076967248',
+  phoneNumber_2: '+2349156458856',
+  phoneNumber_3: '+2348065141193',
+  
   whatsappNumber: '+2347076967248',
   socialLinks: {
     email: '_favouronyegbu22@gmail.com',
