@@ -47,7 +47,7 @@ const Hero = () => {
           {/* Main Heading */}
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold text-cream leading-tight">
             Your Gateway to
-            <span className="block text-gradient-gold mt-2">AbumaLink Enterprises</span>
+            <span className="block text-gradient-gold mt-2">Prime Real Estate</span>
           </h1>
 
           {/* Subtitle */}
