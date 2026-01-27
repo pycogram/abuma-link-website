@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import configDetail from "config";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,50 +12,96 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const baseURL = "https://abumalink.vercel.app/" // https://www.abumalink.com/
+
 export const metadata: Metadata = {
-  title: "AbumaLink Real Estate - Your Trusted Property Partner in Asaba | Verified Land & Properties",
-  description: "AbumaLink is Asaba's leading real estate company specializing in verified property sales, land acquisition, and property investment. Over 10 years helping clients secure prime GRA plots, residential land, and commercial properties with complete transparency.",
-  keywords: "AbumaLink, AbumaLink real estate, Asaba property company, land for sale Asaba, GRA Asaba plots, Delta State real estate, verified properties Asaba, property investment Asaba, real estate agent Asaba, land acquisition Nigeria",
-  authors: [{ name: "AbumaLink Real Estate" }],
-  creator: "AbumaLink Real Estate",
-  publisher: "AbumaLink Real Estate",
+  title: {
+    default: "AbumaLink Real Estate",
+    template: "%s | AbumaLink",
+  },
+  description:
+    "AbumaLink is Asaba's leading real estate company specializing in verified property sales, land acquisition, and property investment. Over 10 years helping clients secure prime GRA plots, residential land, and commercial properties with complete transparency.",
+
+  keywords: [
+    "Real Estate",
+    "Property Investment",
+    "Land for Sale",
+    "Building Investment",
+    "Property Rental",
+    "Real Estate Delta",
+    "Land Purchase",
+    "Commercial Property",
+    "Residential Property",
+    "Property Development",
+    "Real Estate Nigeria",
+    "Investment Property",
+    "Estate Management",
+    "Property Sales",
+    "Real Estate Investment",
+    "Land Development",
+    "Property Portfolio",
+    "AbumaLink",
+    "Abuma Link"
+  ],
+
+  authors: [{ name: "AbumaLink Team" }],
+  creator: "AbumaLink",
+  publisher: "AbumaLink Team",
+  metadataBase: new URL(baseURL),
+
   openGraph: {
-    title: "AbumaLink Real Estate - Your Trusted Property Partner in Asaba",
-    description: "Leading real estate company in Asaba. 100% verified properties, 10+ years experience, transparent processes, and dedicated after-sale support for all your property investment needs.",
-    url: "https://abumalink-v1.vercel.app", 
-    siteName: "AbumaLink Real Estate",
+    type: "website",
+    locale: "en_US",
+    url: baseURL,
+    siteName: "AbumaLink",
+    title: "AbumaLink - Premium Property Investment Solutions",
+    description:
+      "Premier property investment solutions in lands, buildings, and rentals. Building wealth through real estate excellence in Delta and beyond.",
     images: [
       {
-        url: "https://abumalink-v1.vercel.app/assets/AL2Bg.png", 
+        url: `${baseURL}assets/AL2Bg.png`,  
         width: 1200,
         height: 630,
-        alt: "AbumaLink Real Estate - Premium Properties in Asaba",
+        alt: "AbumaLink - Real Estate Investment",
       },
     ],
-    locale: "en_NG",
-    type: "website",
   },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "AbumaLink - Premium Property Investment Solutions",
+    description:
+      "Premier property investment solutions in lands, buildings, and rentals. Building wealth through real estate excellence.",
+    images: [`${baseURL}assets/AL2Bg.png`],
+    creator: "@AbumaLink",
+    site: "@AbumaLink",
+  },
+
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/assets/AL2Bg.png", type: "image/png", sizes: "32x32" },
+    ],
+    apple: [
+      { url: "/assets/AL2Bg.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
+
+  manifest: "/site.webmanifest",
+
   robots: {
     index: true,
     follow: true,
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
-  alternates: {
-    canonical: "https://abumalink-v1.vercel.app", 
-  },
-  verification: {
-    google: "your-google-verification-code",
-  },
+
   category: "Real Estate",
-  other: {
-    'contact:whatsapp': configDetail.whatsappNumber, 
-  },
 };
 
 export default function RootLayout({
@@ -65,10 +110,52 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <meta name="google-site-verification" content="i40g15crXdmDeE-cIEVaKuQFBPzOM58NH4XtsupkIIA" />
+        <meta name="theme-color" content="#000000" />
+        
+        {/* JSON-LD Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "RealEstateAgent",
+              "name": "AbumaLink",
+              "description": "AbumaLink is Asaba's leading real estate company specializing in verified property sales, land acquisition, and property investment.",
+              "url": baseURL,
+              "logo": `${baseURL}assets/AL2Bg.png`,
+              "image": `${baseURL}assets/AL2Bg.png`,
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Asaba",
+                "addressRegion": "Delta State",
+                "addressCountry": "NG"
+              },
+              "areaServed": {
+                "@type": "State",
+                "name": "Delta State"
+              }
+            })
+          }}
+        />
+        
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "AbumaLink",
+              "url": baseURL,
+              "logo": `${baseURL}assets/AL2Bg.png`,
+              "description": "AbumaLink is Asaba's leading real estate company specializing in verified property sales, land acquisition, and property investment."
+            })
+          }}
+        />
+      </head>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
     </html>

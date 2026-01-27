@@ -1,4 +1,4 @@
-import { Phone, MessageCircle, MapPin, Instagram, Facebook, Twitter } from "lucide-react";
+import { Phone, MessageCircle, MapPin, Instagram, Facebook, Twitter, ArrowUp } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 import Image from "next/image";
 import configDetail from "config";
@@ -7,6 +7,10 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const phoneNumber = configDetail.phoneNumber; 
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <AnimatedSection animation="fade">
@@ -108,6 +112,14 @@ const Footer = () => {
               </ul>
             </div>
           </div>
+
+          <button
+            onClick={scrollToTop}
+            className="w-10 h-10 place-self-end rounded-lg bg-neutral-500 mb-2 flex items-center justify-center hover:bg-accent/90 transition-colors"
+            aria-label="Scroll to top"
+          >
+            <ArrowUp className="w-5 h-5 text-accent-foreground" />
+          </button>
 
           {/* Bottom Bar */}
           <div className="py-6 border-t border-cream/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-cream/50">

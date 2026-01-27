@@ -1,4 +1,5 @@
-import { Phone, MessageCircle } from "lucide-react";
+"use client"
+import { Phone,Building2, MapPin, MessageCircle, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image"; 
 import configDetail from "config";
@@ -21,6 +22,12 @@ const Hero = () => {
     const selectedPhone = phoneNumbers[Math.floor(Math.random() * phoneNumbers.length)];
     window.location.href = `tel:${selectedPhone.replace(/\s/g, "")}`;
   };
+
+  const stats = [
+    { icon: Building2, value: '700+', label: 'Properties Sold' },
+    { icon: MapPin, value: '150+', label: 'Prime Locations' },
+    { icon: Home, value: '2500+', label: 'Happy Clients' },
+  ];
 
   return (
     <section className="pt-[6rem] pb-[2rem] relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -83,8 +90,23 @@ const Hero = () => {
             </Button>
           </div>
 
+          {/* Stats */}
+          <div className="flex flex-wrap pt-4 place-self-center gap-8 animate-fade-up" style={{ animationDelay: '0.4s' }}>
+            {stats.map((stat, index) => (
+              <div key={index} className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center">
+                  <stat.icon className="w-6 h-6 text-accent" />
+                </div>
+                <div>
+                  <p className="text-2xl font-bold text-primary-foreground">{stat.value}</p>
+                  <p className="text-sm text-primary-foreground/60">{stat.label}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
           {/* Trust Indicator */}
-          <div className="pt-8 flex flex-wrap justify-center gap-8 text-cream/60 text-sm">
+          <div className="pt-6 flex flex-wrap justify-center gap-8 text-cream/60 text-sm">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-gold animate-pulse" />
               <span>Verified Properties</span>
@@ -95,11 +117,13 @@ const Hero = () => {
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-              <span>Trusted since 2010</span>
+              <span>Trusted Since 2010</span>
             </div>
           </div>
+
         </div>
       </div>
+
     </section>
   );
 };
