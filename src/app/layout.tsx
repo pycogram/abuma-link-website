@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const baseURL = "https://abumalink-v2.vercel.app"; 
+const baseURL = "https://abumalink-v3.vercel.app"; 
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseURL), 
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "AbumaLink - Premium Property Investment Solutions",
+    title: "AbumaLink - Real Estate Investment",
     description:
       "Premier property investment solutions in lands, buildings, and rentals. Building wealth through real estate excellence.",
     images: ["/assets/AL2Bg.png"], // Relative URL - metadataBase makes it absolute
