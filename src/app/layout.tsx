@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const baseURL = "https://abumalink-v3.vercel.app"; 
+const baseURL = "https://abumalink-v4.vercel.app"; 
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseURL), 
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "AbumaLink - Real Estate Investment",
     description:
-      "Premier property investment solutions in lands, buildings, and rentals. Building wealth through real estate excellence.",
+      "AbumaLink is Asaba's leading real estate company specializing in verified property sales, land acquisition, and property investment. Over 10 years helping clients secure prime GRA plots, residential land, and commercial properties with complete transparency.",
     images: ["/assets/AL2Bg.png"], // Relative URL - metadataBase makes it absolute
     creator: "@AbumaLink",
     site: "@AbumaLink",
