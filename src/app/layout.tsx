@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const baseURL = "https://abumalink-v1.vercel.app"; 
+const baseURL = "https://abumalink-v2.vercel.app"; 
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseURL), 
