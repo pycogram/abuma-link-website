@@ -106,7 +106,7 @@ const Hero = () => {
           </div>
 
           {/* Trust Indicator */}
-          <div className="pt-6 block space-y-2 sm:space-y-0 md:flex flex-wrap justify-center sm:gap-8 text-cream/60 text-sm">
+          <div className="pt-6 block space-y-2 sm:space-y-0 sm:flex flex-wrap justify-center sm:gap-8 text-cream/60 text-sm">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-gold animate-pulse" />
               <span>Verified Properties</span>
