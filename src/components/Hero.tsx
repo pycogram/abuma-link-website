@@ -98,7 +98,7 @@ const Hero = () => {
                   <stat.icon className="w-6 h-6 text-accent" />
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-primary-foreground">{stat.value}</p>
+                  <p className="text-2xl text-start w-fit font-bold text-primary-foreground">{stat.value}</p>
                   <p className="text-sm text-primary-foreground/60">{stat.label}</p>
                 </div>
               </div>
@@ -106,7 +106,7 @@ const Hero = () => {
           </div>
 
           {/* Trust Indicator */}
-          <div className="pt-6 flex flex-wrap justify-center gap-8 text-cream/60 text-sm">
+          <div className="pt-6 block space-y-2 sm:space-y-0 md:flex flex-wrap justify-center sm:gap-8 text-cream/60 text-sm">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-gold animate-pulse" />
               <span>Verified Properties</span>
