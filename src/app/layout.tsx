@@ -12,13 +12,16 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const baseURL = "https://abumalink.vercel.app/" // https://www.abumalink.com/
+const baseURL = "https://abumalink-v2.vercel.app"; 
 
 export const metadata: Metadata = {
+  metadataBase: new URL(baseURL), 
+  
   title: {
     default: "AbumaLink Real Estate",
     template: "%s | AbumaLink",
   },
+  
   description:
     "AbumaLink is Asaba's leading real estate company specializing in verified property sales, land acquisition, and property investment. Over 10 years helping clients secure prime GRA plots, residential land, and commercial properties with complete transparency.",
 
@@ -47,7 +50,6 @@ export const metadata: Metadata = {
   authors: [{ name: "AbumaLink Team" }],
   creator: "AbumaLink",
   publisher: "AbumaLink Team",
-  metadataBase: new URL(baseURL),
 
   openGraph: {
     type: "website",
@@ -59,7 +61,7 @@ export const metadata: Metadata = {
       "Premier property investment solutions in lands, buildings, and rentals. Building wealth through real estate excellence in Delta and beyond.",
     images: [
       {
-        url: `${baseURL}assets/AL2Bg.png`,  
+        url: "/assets/AL2Bg.png", 
         width: 1200,
         height: 630,
         alt: "AbumaLink - Real Estate Investment",
@@ -72,7 +74,7 @@ export const metadata: Metadata = {
     title: "AbumaLink - Premium Property Investment Solutions",
     description:
       "Premier property investment solutions in lands, buildings, and rentals. Building wealth through real estate excellence.",
-    images: [`${baseURL}assets/AL2Bg.png`],
+    images: ["/assets/AL2Bg.png"], // Relative URL - metadataBase makes it absolute
     creator: "@AbumaLink",
     site: "@AbumaLink",
   },
@@ -125,8 +127,8 @@ export default function RootLayout({
               "name": "AbumaLink",
               "description": "AbumaLink is Asaba's leading real estate company specializing in verified property sales, land acquisition, and property investment.",
               "url": baseURL,
-              "logo": `${baseURL}assets/AL2Bg.png`,
-              "image": `${baseURL}assets/AL2Bg.png`,
+              "logo": `${baseURL}/assets/AL2Bg.png`, // Added leading slash
+              "image": `${baseURL}/assets/AL2Bg.png`, // Added leading slash
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Asaba",
@@ -149,7 +151,7 @@ export default function RootLayout({
               "@type": "Organization",
               "name": "AbumaLink",
               "url": baseURL,
-              "logo": `${baseURL}assets/AL2Bg.png`,
+              "logo": `${baseURL}/assets/AL2Bg.png`, 
               "description": "AbumaLink is Asaba's leading real estate company specializing in verified property sales, land acquisition, and property investment."
             })
           }}
