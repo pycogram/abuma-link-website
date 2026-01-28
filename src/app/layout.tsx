@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const baseURL = "https://abumalink-v2.vercel.app"; 
+const baseURL = "https://abumalink-v1.vercel.app"; 
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseURL), 
@@ -56,9 +56,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: baseURL,
     siteName: "AbumaLink",
-    title: "AbumaLink - Premium Property Investment Solutions",
+    title: "AbumaLink - Real Estate",
     description:
-      "Premier property investment solutions in lands, buildings, and rentals. Building wealth through real estate excellence in Delta and beyond.",
+      "AbumaLink is Asaba's leading real estate company specializing in verified property sales, land acquisition, and property investment. Over 10 years helping clients secure prime GRA plots, residential land, and commercial properties with complete transparency.",
     images: [
       {
         url: "/assets/AL2Bg.png", 
